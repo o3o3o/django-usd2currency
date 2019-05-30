@@ -38,7 +38,7 @@ def update_rate(currency):
     return d['quotes'][get_symbol(currency)]
 
 
-def get_rate_from_usd(currency):
+def get_rate_from_usd(currency='CNY'):
     v = cache.get(get_symbol(currency))
     if v:
         return v

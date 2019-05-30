@@ -5,32 +5,38 @@ by caching free-limited-api from apilayer.com
 
 ## Quick start
 
-1. Install::
+* Install::
 
 ``` 
    pip install django-usd2currency
 ```
 
-1. Add "django_usd2currency" to your INSTALLED_APPS setting like this::
+* Add `APILAYER_ACCESS_KEY` to your setting like this::
 
 ```
-   INSTALLED_APPS = [
-   ...
-   'django_usd2currency',
-   ]
    # Get free api from https://currencylayer.com/signup/free
    APILAYER_ACCESS_KEY = 'xxxxxxxxxxx'
 ```
 
-1. Start to use it in code
+* Start to use it in code
 
 ```
    from django_usd2currency.utils import usd2currency
+   print(usd2currency(1, currency='CNY'))
 
-   print(usd2currency(12, currency='CNY'))
+   from django_usd2currency.utils import get_rate_from_usd
+   print(get_rate_from_usd(currency='JPY'))
 ```
 
-1. Use [redis as cache backend](https://niwinz.github.io/django-redis/latest/) to lock in the multiprocess env.
+1. Use [redis as cache backend](https://niwinz.github.io/django-redis/latest/#_configure_as_cache_backend) to lock in the multiprocess env.
+
+
+## Settings
+
+* `APILAYER_ACCESS_KEY`: *required*
+*
+* `APILAYER_CURRENCIES`: target currencies
+    Default is `['CNY', 'EUR', 'JPY', 'KRW']`
 
 
 ## TODO:
