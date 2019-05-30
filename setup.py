@@ -5,6 +5,7 @@ setup(
     version='0.1',
     description='Free usd/{currency} utils by caching api from apilayer.com',
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     author='o3o3o',
     author_email='o3o3o.me@gmail.com',
     url='https://github.com/o3o3o/django-usd2currency',
